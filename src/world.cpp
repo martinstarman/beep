@@ -26,11 +26,11 @@ std::vector<Entity *> World::Entities()
   return this->mEntities;
 }
 
-void World::Update()
+void World::Update(double deltaTime)
 {
   for (int i = 0; i < this->mEntities.size(); i++)
   {
-    this->mEntities.at(i)->Update();
+    this->mEntities.at(i)->Update(deltaTime);
   }
 }
 

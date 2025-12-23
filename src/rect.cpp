@@ -10,3 +10,13 @@ Rect::Rect(float x, float y, float w, float h) : mX(x),
 }
 
 Rect::~Rect() = default;
+
+float Rect::Y()
+{
+  return this->mY;
+}
+
+void Rect::SetY(float y)
+{
+  this->mY = y;
+}

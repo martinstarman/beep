@@ -2,15 +2,18 @@
 
 #include "actor.h"
 #include "rect.h"
+#include "vec2.h"
 
-Actor::Actor(float x, float y, float w, float h) : mRect(x, y, w, h)
+Actor::Actor(float x, float y, float w, float h) : mRect(x, y, w, h), mVelocity(0.0, 0.0)
 {
 }
 
 Actor::~Actor() = default;
 
-void Actor::Update()
+void Actor::Update(double deltaTime)
 {
+  this->mVelocity.SetY(this->mVelocity.Y() + (this->kGravity * deltaTime));
+  this->mRect.SetY(this->mRect.Y() + (this->mVelocity.Y() * (float)deltaTime));
 }
 
 void Actor::Render(SDL_Renderer *renderer)

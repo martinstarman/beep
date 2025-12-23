@@ -12,7 +12,7 @@ public:
   ~World();
   void AddEntity(Entity *);
   std::vector<Entity *> Entities();
-  void Update();
+  void Update(double deltaTime);
   void Render(SDL_Renderer *renderer);
 
 private:

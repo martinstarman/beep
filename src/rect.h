@@ -8,6 +8,8 @@ public:
   Rect(float x, float y, float w, float h);
   ~Rect();
   operator SDL_FRect() { return {this->mX, this->mY, this->mW, this->mH}; };
+  float Y();
+  void SetY(float y);
 
 private:
   float mX;

@@ -9,7 +9,7 @@
 const int kWindowWidth = 640;
 const int kWindowHeight = 480;
 
-const double kMsPerFrame = 1000.0 / 60.0;
+const double kMsPerFrame = 1.0 / 60.0;
 
 SDL_Window *gWindow = NULL;
 SDL_Renderer *gRenderer = NULL;
@@ -47,7 +47,7 @@ int SDL_main(int argc, char *args[])
 
         while (lag >= kMsPerFrame)
         {
-            world->Update();
+            world->Update(kMsPerFrame);
             lag -= kMsPerFrame;
         }
 
