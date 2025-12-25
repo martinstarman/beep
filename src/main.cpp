@@ -3,7 +3,7 @@
 #include <SDL3/SDL_main.h>
 
 #include "actor.h"
-#include "rect.h"
+#include "vec2.h"
 #include "world.h"
 
 const int kWindowWidth = 640;
@@ -34,7 +34,7 @@ int SDL_main(int argc, char *args[])
     double lag = 0.0;
 
     auto world = new World();
-    auto actor = new Actor(10.0, 10.0, 100.0, 100.0);
+    auto actor = new Actor(Vec2(10.0, 10.0), Vec2(100.0, 100.0));
 
     world->AddEntity(actor);
 
